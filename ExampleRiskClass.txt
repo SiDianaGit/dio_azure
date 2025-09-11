@@ -1,0 +1,54 @@
+Example: Putting risks into risk classes
+Here are 10 risks identified in a Risk identification Workshop. These are captured as they are brought up in the RIW; they are not in any particular order.
+1.
+The new technology planned for this project will not work as expected which will impact the final project cost and delay delivery which will impact client satisfaction.
+2.
+The team is coming off of a project that required a lot of overtime which will impact their productivity leading to cost overruns and delays that impact client satisfaction.
+3.
+Competitor products are perceived as superior to ours leading to failure to win the bid for the project.
+4.
+Integration of our project with the client’s system is more difficult than anticipated leading to higher costs, schedule delays and a poor perception of the team by the client during project integration.
+5.
+The subcontractor does not deliver on time which impacts the overall delivery schedule and client satisfaction.
+6.
+The subcontractor delivers a product that does not meet our specifications or does not work with our system in development which impacts cost, delivery dates, and client satisfaction.
+7.
+Changes the client wishes to add after development has begun impacts our development effort which increases costs and causes delays of the project delivery.
+8.
+Release of the next version of the base system will be delayed which delays delivery affecting client satisfaction.
+9.
+The project lead architect is unavailable to work on the system after completion of system design which impacts project quality during development and test leading to poor quality perception by the client.
+10.An IBM purchasing freeze prevents the team from getting upgrades to the
+productivity tools used impacts productivity and project profit.
+Consider using the three risk classes introduced in Module 1: Win (win the business), Profit (making the expected profit, or meeting project costs), and client satisfaction. The next page shows a possible collection of these risks into risk classes.
+© Copyright IBM Corporation 2010. All rights reserved. Risk class example Page 2 of 3
+Example: Putting risks into risk classes
+Win the Business
+risk renumbered as W 1.
+: Competitor products are perceived as superior to ours leading to failure to win the bid for the project.
+Profit
+risks renumbered as Pea 1 through 5. 1.
+The new technology planned for this project will not work as expected which will impact the final project cost.
+P2: The team is coming off of a project that required a lot of overtime which will impact their productivity leading to cost overruns and delays that impact client satisfaction.
+P3: Integration of our project with the client’s system is more difficult than anticipated leading to a poor perception of the team by the client during project integration.
+P4: The subcontractor delivers a product that does not meet our specifications or does not work with our system in development which impacts cost.
+P5: Changes the client wishes to add after development has begun impacts our development effort which increases costs.
+Client Satisfaction
+Risks renumbered as risks C 1 through 7. 1.
+T
+he new technology planned for this project will not work as expected which will delivery which will impact client satisfaction.
+C2: The team is coming off of a project that required a lot of overtime which will impact their productivity leading to delays that impact client satisfaction.
+C3: Integration of our project with the client’s system is more difficult than anticipated leading to higher costs during project integration.
+C4: The subcontractor does not deliver on time which impacts the overall delivery schedule and client satisfaction.
+C5: The subcontractor delivers a product that does not meet our specifications or does
+not work with our system in development which impacts delivery dates, and client
+satisfaction.
+© Copyright IBM Corporation 2010. All rights reserved. Risk class example Page 3 of 3
+Example: Putting risks into risk classes
+C6: Release of the next version of the base system will be delayed which delays delivery affecting client satisfaction.
+C7: The project lead architect is unavailable to work on the system after completion of
+system design which impacts project quality during development and test leading to
+poor quality perception by the client.
+Note that some of the risks are repeated between the risk classes. It will be easier to refer to risks by an identifier like a risk number as you work further through the risk management process. The risk numbers need to change since risks are repeated within the risk classes. In this example the risk are renumbered by their class.
+Also, the risks were rewritten to focus on the risk class; that is, when profit is the risk class parts of the risk not related to profit (or cost) were removed, and when client satisfaction is the risk class impacts to cost or profit were removed. This is not a requirement when combining risks into risk classes but it usually will help to focus the discussion of the risk on the specific impacts to risk class.
+Finally, note that many of the client satisfaction risks address schedule delays. It is likely specific actions will be taken related to project schedule so that creating a new schedule risk class is likely to be helpful. If a new schedule risk class is created look at each risk again to see which should be placed in that new risk class and reassess the wording to see if you need to include the risks in both schedule and client satisfaction. Most of the risks probably don’t need to be kept in the client satisfaction class since addressing the schedule delays will also prevent impacts to client satisfaction.
