@@ -47,5 +47,5 @@ Obs.: Foi escolhido o "Google Colab" pela facilidade de tratamento e acesso das 
 
 ## Bot Simples - Google Gemini
 
-Neste repositório consta ainda o código  'app.py' com chatbot simple chamando o modelo LLM do Google Gemini. Dependência de biblioteca informada em "requirements.txt".
+Neste repositório consta ainda o código  'app.py' com chatbot simples chamando o modelo LLM do Google Gemini. Dependência de biblioteca informada em "requirements.txt".
 
