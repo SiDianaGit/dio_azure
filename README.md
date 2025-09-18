@@ -5,7 +5,7 @@ Repositório criado para entrega de projetos relacionados aos cursos e bootcamps
 
 ## AI-900
 
-Captura de tela de objetos e recuros criados em AZ-900/images
+Captura de tela de objetos e recuros criados em AI-900/images
 
 ### Azure Bot
 
