@@ -150,5 +150,53 @@ https://learn.microsoft.com/pt-br/training/modules/describe-azure-compute-networ
     - Aplicativos móveis
 
 
+### Entendendo Serviços de Armazenamento do Azure
+https://learn.microsoft.com/pt-br/training/modules/describe-azure-storage-services/
+
+# Conta de Armazenamento do Azure
+
+Uma conta de armazenamento do Azure é a base para todos os serviços de armazenamento na nuvem da Microsoft. É um contêiner que agrupa os diferentes tipos de dados que você quer guardar no Azure, como arquivos, objetos e mensagens. Pense nela como um "cofre" virtual que oferece um espaço de nome único e globalmente acessível para armazenar seus dados.
+
+Aqui está um resumo sobre os principais pontos referentes às contas de armazenamento do Azure:
+
+## Tipos de Dados Suportados
+
+Uma conta de armazenamento pode guardar quatro tipos principais de dados, cada um com um serviço correspondente:
+
+-   **Blob Storage:** Ideal para armazenar grandes volumes de dados não estruturados, como imagens, vídeos, documentos, logs e arquivos de backup. É o serviço mais comum e versátil.
+-   **Azure Files:** Permite criar compartilhamentos de arquivos totalmente gerenciados na nuvem. Eles podem ser acessados usando o protocolo SMB (Server Message Block), o que os torna perfeitos para migrar aplicativos que dependem de compartilhamentos de arquivos tradicionais.
+-   **Azure Queues:** Um serviço de mensagens que armazena grandes quantidades de mensagens para serem processadas por componentes de aplicativos. É usado para criar uma fila de mensagens e desacoplar partes de um aplicativo distribuído.
+-   **Azure Tables:** Um armazenamento NoSQL para grandes quantidades de dados estruturados e semi-estruturados. É um banco de dados de pares chave-valor que oferece um armazenamento flexível e de baixo custo.
+
+## Tipos de Contas de Armazenamento
+
+Ao criar uma conta de armazenamento, você escolhe o tipo que melhor se adequa às suas necessidades de desempenho e custo. O tipo mais recomendado para a maioria dos cenários é o **General-purpose v2**.
+
+-   **General-purpose v2 (GPv2):** O tipo mais comum e flexível. Ele suporta todos os serviços de armazenamento (Blobs, Files, Queues, Tables) e oferece diferentes camadas de acesso (Hot, Cool e Archive).
+-   **Blob Storage Accounts:** Contas legadas, focadas apenas em blobs. É mais comum usar o GPv2.
+-   **File Storage Accounts:** Focadas apenas em Azure Files. Oferecem desempenho premium e são ideais para cargas de trabalho que exigem alta performance de E/S.
+
+## Camadas de Acesso (para Blobs)
+
+As contas de armazenamento oferecem diferentes camadas de acesso para otimizar os custos com base na frequência de uso dos dados:
+
+-   **Hot (Quente):** Para dados acessados frequentemente. Tem o custo mais alto de armazenamento, mas o mais baixo de acesso.
+-   **Cool (Fria):** Para dados acessados com pouca frequência (pelo menos uma vez a cada 30 dias). Tem um custo de armazenamento mais baixo que a camada Hot, mas um custo de acesso mais alto.
+-   **Archive (Arquivo):** Para dados que raramente são acessados e podem tolerar longos tempos de recuperação (horas). Tem o custo de armazenamento mais baixo de todos, mas o custo de acesso é o mais alto. É ideal para backups e arquivamento de longo prazo.
+
+## Opções de Redundância
+
+A Azure Storage oferece várias opções de redundância para garantir a durabilidade e a alta disponibilidade dos seus dados. A escolha da redundância depende do nível de proteção que você precisa:
+
+-   **LRS (Locally-redundant storage):** Cria três cópias dos seus dados na mesma região. Oferece boa proteção contra falhas de hardware local.
+-   **ZRS (Zone-redundant storage):** Cria três cópias dos seus dados em diferentes zonas de disponibilidade (data centers físicos) na mesma região. Protege contra falhas em data centers completos.
+-   **GRS (Geo-redundant storage):** Cria três cópias na região primária (LRS) e mais três cópias em uma região secundária pareada. Protege contra desastres regionais.
+-   **GZRS (Geo-zone-redundant storage):** Combina ZRS e GRS. Cria três cópias em zonas de disponibilidade na região primária e mais três cópias em uma região secundária. É a opção mais cara, mas oferece a maior durabilidade.
+
+---
+
+Em resumo, as contas de armazenamento do Azure são uma solução escalável, segura e altamente disponível para todas as necessidades de dados, desde arquivos simples até bancos de dados NoSQL e grandes volumes de dados não estruturados.
+
+
 
 
