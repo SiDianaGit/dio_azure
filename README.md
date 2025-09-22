@@ -205,3 +205,59 @@ Em resumo, as contas de armazenamento do Azure são uma solução escalável, se
 
 
 
+### Entendendo identidade, acesso e a segurança do Azure 
+https://learn.microsoft.com/pt-br/training/modules/describe-azure-identity-access-security/1-introduction
+
+#### Microsoft Entra ID: Identidade e Acesso no Azure
+
+O **Microsoft Entra ID** é o serviço de identidade e acesso central do Azure, que unifica o acesso a recursos na nuvem, aplicativos e serviços externos. Anteriormente conhecido como Azure Active Directory (Azure AD), a mudança de nome reflete seu papel expandido como um pilar da estratégia de segurança da Microsoft.
+
+##### Microsoft Entra ID e a Estratégia de Confiança Zero
+
+O Microsoft Entra ID é o alicerce do modelo de segurança **Confiança Zero (Zero Trust)**, que se baseia na filosofia de "nunca confiar, sempre verificar". Ele garante que todas as solicitações de acesso sejam autenticadas e autorizadas, independentemente de onde se originam.
+
+##### Camadas de Segurança e Defesa em Profundidade
+
+A segurança no Azure é implementada em camadas, um modelo conhecido como **Defesa em Profundidade**. A identidade é a primeira e mais crucial dessas camadas:
+
+- **Identidade e Acesso (Microsoft Entra ID):** Atua como a primeira barreira, verificando a identidade do usuário e o estado do dispositivo antes de conceder acesso.
+- **Proteção de Endpoints (Microsoft Defender for Endpoint):** Protege dispositivos de ataques.
+- **Segurança de Rede:** Controla o tráfego entre os recursos.
+- **Segurança de Dados:** Classifica e protege informações sensíveis.
+
+##### Principais Componentes de Acesso e Autenticação
+
+O Microsoft Entra ID oferece um conjunto robusto de ferramentas para gerenciar o acesso de forma segura e flexível.
+
+###### Métodos de Autenticação
+
+O serviço suporta métodos de autenticação modernos para fortalecer a segurança:
+
+- **Autenticação Multifator (MFA):** Adiciona uma camada extra de segurança, exigindo um segundo método de verificação, como um código no aplicativo Microsoft Authenticator.
+- **Acesso sem Senha:** Permite que usuários se autentiquem usando métodos mais seguros e convenientes, como chaves de segurança FIDO2.
+
+###### Acesso Condicional
+
+É a ferramenta mais poderosa para implementar políticas de Confiança Zero. O Acesso Condicional permite criar regras granulares que controlam o acesso com base em fatores como:
+
+- Identidade do usuário ou grupo.
+- Localização da solicitação.
+- Dispositivo que está sendo usado (por exemplo, exigindo um dispositivo gerenciado).
+- Aplicativo ou serviço que o usuário está tentando acessar.
+
+###### Identidades Externas
+
+O Microsoft Entra ID simplifica a colaboração com parceiros e clientes, permitindo que eles acessem seus recursos de forma segura. O **Azure B2B (Business-to-Business)** e o **Azure B2C (Business-to-Consumer)** permitem gerenciar identidades de parceiros e consumidores, respectivamente, sem a necessidade de criar contas de usuário em seu próprio diretório.
+
+###### Controle de Acesso Baseado em Função (RBAC)
+
+Enquanto o Microsoft Entra ID gerencia a identidade (quem você é), o **RBAC (Role-Based Access Control)** controla o acesso (o que você pode fazer). Ele atribui permissões específicas, como "Leitor" ou "Colaborador", a usuários, grupos ou identidades em um determinado escopo, garantindo que as pessoas tenham apenas o acesso necessário para realizar suas tarefas.
+
+##### Sinergia com o Microsoft Defender
+
+O Microsoft Entra ID integra-se perfeitamente com a família de produtos Microsoft Defender para fornecer proteção completa:
+
+- **Microsoft Defender for Identity:** Monitora o ambiente híbrido para detectar ataques baseados em identidade, como escalonamento de privilégios.
+- **Microsoft Defender for Cloud:** Oferece visibilidade sobre a postura de segurança e as vulnerabilidades em suas cargas de trabalho na nuvem.
+
+Em suma, a segurança de identidade e acesso no Azure, centrada no Microsoft Entra ID, é a base para a proteção de seus ambientes. Ao combinar métodos de autenticação robustos, acesso condicional, RBAC e a inteligência do Microsoft Defender, a plataforma permite que as organizações implementem uma estratégia de Confiança Zero e Defesa em Profundidade eficaz.
