@@ -261,3 +261,34 @@ O Microsoft Entra ID integra-se perfeitamente com a família de produtos Microso
 - **Microsoft Defender for Cloud:** Oferece visibilidade sobre a postura de segurança e as vulnerabilidades em suas cargas de trabalho na nuvem.
 
 Em suma, a segurança de identidade e acesso no Azure, centrada no Microsoft Entra ID, é a base para a proteção de seus ambientes. Ao combinar métodos de autenticação robustos, acesso condicional, RBAC e a inteligência do Microsoft Defender, a plataforma permite que as organizações implementem uma estratégia de Confiança Zero e Defesa em Profundidade eficaz.
+
+
+### Entendendo a Calculadora de Custos do Azure, Gestão e Otimização de Custos
+https://azure.microsoft.com/pt-br/pricing/calculator/
+
+A **Calculadora de Preços do Azure** é uma ferramenta essencial para planejar e estimar os gastos com a nuvem, permitindo que você configure e visualize os custos de diferentes serviços e produtos do Azure antes de implementá-los. Ela funciona como um simulador, onde você seleciona os recursos (como máquinas virtuais, armazenamento, bancos de dados, etc.) e a ferramenta calcula uma estimativa mensal ou anual com base nas suas escolhas.
+
+#### Calculadora TCO (Custo Total de Propriedade)
+
+Além da Calculadora de Preços, a **Calculadora de Custo Total de Propriedade (TCO)** do Azure é fundamental para comparar os custos de manter sua infraestrutura no local (on-premises) com a migração para o Azure. Essa ferramenta ajuda a entender os benefícios econômicos de mover para a nuvem. Ela leva em consideração não apenas os custos de hardware e software, mas também despesas como energia, refrigeração, manutenção e mão de obra. O resultado é um relatório detalhado que mostra a economia potencial ao migrar para a nuvem.
+
+#### Estratégias de Gestão e Otimização de Custos no Azure
+
+Para gerenciar e otimizar seus gastos na nuvem de forma eficaz, o Azure oferece diversas estratégias e ferramentas:
+
+##### Monitoramento e Análise de Custos
+Utilize o **Gerenciamento de Custos + Faturamento do Azure**. Essa ferramenta fornece dashboards e relatórios detalhados sobre como os custos estão sendo distribuídos. Você pode criar orçamentos, definir alertas e analisar o histórico de gastos para identificar onde os recursos estão sendo mais consumidos.
+
+##### Otimização de Recursos
+* **Dimensionamento Correto (Right-sizing):** Garanta que os recursos (como VMs) tenham o tamanho ideal para a carga de trabalho. Muitas vezes, recursos superdimensionados são criados, gerando custos desnecessários.
+* **Exclusão de Recursos Inativos:** Identifique e delete recursos que não estão mais em uso. Servidores de desenvolvimento ou testes que ficam ligados fora do horário de trabalho são um exemplo comum.
+* **Agendamento de Ativação/Desativação:** Para ambientes de desenvolvimento e teste, agende o desligamento automático dos recursos fora do horário comercial para economizar.
+
+##### Modelos de Preços Flexíveis
+* **Instâncias Reservadas (Reserved Instances - RIs):** Comprometa-se a utilizar um recurso (como uma VM) por um período de um ou três anos. Isso pode gerar uma economia de até 72% em comparação com o pagamento por uso (pay-as-you-go).
+* **Plano de Economia do Azure (Azure Savings Plan):** Comprometa-se com um gasto por hora em serviços de computação (como VMs, App Service, Functions) por um ou três anos para obter descontos significativos.
+* **Azure Hybrid Benefit:** Use suas licenças locais do Windows Server e SQL Server com Software Assurance para obter grandes descontos em VMs no Azure.
+
+##### Recomendações e Automação
+* **Azure Advisor:** Use essa ferramenta para obter recomendações personalizadas para otimizar seus custos. Ela analisa seu uso de recursos e sugere formas de economizar, como a compra de instâncias reservadas ou a exclusão de recursos subutilizados.
+* **Automação:** Implemente automações para desligar recursos em horários de pico ou escalar a infraestrutura para cima ou para baixo com base na demanda, garantindo que você pague apenas pelo que realmente precisa.
