@@ -63,6 +63,7 @@ https://learn.microsoft.com/pt-br/training/modules/describe-core-architectural-c
 
 
 
+
 ### Entendendo Serviços de Computação e Rede do Azure
 https://learn.microsoft.com/pt-br/training/modules/describe-azure-compute-networking-services/1-introduction
 https://learn.microsoft.com/pt-br/training/paths/design-implement-microsoft-azure-networking-solutions-az-700/
@@ -81,22 +82,22 @@ https://learn.microsoft.com/pt-br/training/modules/describe-azure-compute-networ
   As redes virtuais do Azure permitem vincular recursos em seu ambiente local e na assinatura do Azure. 
   Por padrão, o Azure faz o *roteamento de tráfego* entre sub-redes em redes virtuais conectadas, em redes locais e na Internet.
   As redes virtuais do Azure permitem *filtrar o tráfego* entre sub-redes usando as seguintes abordagens:
-    - Grupos de segurança de rede são recursos do Azure que podem conter várias regras de segurança de entrada e saída. Você pode definir essas regras para permitir ou bloquear tráfego com base em fatores como endereço IP de origem e de destino, porta e protocolo.
-    - Soluções de virtualização de rede são VMs especializadas que podem ser comparadas a um dispositivo de rede protegida. Uma solução de virtualização de rede realiza uma função de rede específica, como execução de um firewall ou otimização de WAN (rede de longa distância).
+  -   Grupos de segurança de rede são recursos do Azure que podem conter várias regras de segurança de entrada e saída. Você pode definir essas regras para permitir ou bloquear tráfego com base em fatores como endereço IP de origem e de destino, porta e protocolo.
+  -   Soluções de virtualização de rede são VMs especializadas que podem ser comparadas a um dispositivo de rede protegida. Uma solução de virtualização de rede realiza uma função de rede específica, como execução de um firewall ou otimização de WAN (rede de longa distância).
   Você pode *vincular redes virtuais* usando o *emparelhamento* dessas redes. O emparelhamento permite que duas redes virtuais se conectem diretamente entre si. O tráfego de rede entre redes emparelhadas é privado e viaja na rede de backbone da Microsoft, nunca entrando na Internet pública.
 
 #### VPN  e Gateway de VPN
 https://learn.microsoft.com/pt-br/training/modules/describe-azure-compute-networking-services/10-virtual-private-networks
   Uma VPN (rede virtual privada) usa um túnel criptografado dentro de outra rede. As VPNs costumam ser implantadas para conectar duas ou mais redes privadas confiáveis entre si em uma rede não confiável (normalmente a Internet pública). 
   Um gateway de VPN é um tipo de gateway de rede virtual. As instâncias do Gateway de VPN do Azure são implantadas em uma subrede dedicada da rede virtual e permitem a seguinte conectividade:
-    - Conecte datacenters locais a redes virtuais por meio de uma conexão site a site.
-    - Conecte dispositivos individuais a redes virtuais por meio de uma conexão ponto a site.
-    - Conecte redes virtuais a outras redes virtuais por meio de uma conexão rede a rede.
+  -   Conecte datacenters locais a redes virtuais por meio de uma conexão site a site.
+  -   Conecte dispositivos individuais a redes virtuais por meio de uma conexão ponto a site.
+  -   Conecte redes virtuais a outras redes virtuais por meio de uma conexão rede a rede.
   Cenários de alta disponibilidade
-    - Ativo/em espera: Por padrão, gateways de VPN são implantados como duas instâncias em uma configuração ativa/em espera, mesmo se você vê apenas um recurso de gateway de VPN no Azure.
-    - Ativo/ativo: Com a introdução da compatibilidade com o protocolo de roteamento BGP, você também pode implantar os gateways de VPN em uma configuração ativo/ativo.
-    - Failover do ExpressRoute: Outra opção de alta disponibilidade é configurar um gateway de VPN como um caminho de failover seguro para conexões ExpressRoute.
-    - Gateways com redundância de zona: Nas regiões que dão suporte a zonas de disponibilidade, os gateways de VPN e os gateways de ExpressRoute podem ser implantados em uma configuração com redundância de zona. 
+  -   Ativo/em espera: Por padrão, gateways de VPN são implantados como duas instâncias em uma configuração ativa/em espera, mesmo se você vê apenas um recurso de gateway de VPN no Azure.
+  -   Ativo/ativo: Com a introdução da compatibilidade com o protocolo de roteamento BGP, você também pode implantar os gateways de VPN em uma configuração ativo/ativo.
+  -   Failover do ExpressRoute: Outra opção de alta disponibilidade é configurar um gateway de VPN como um caminho de failover seguro para conexões ExpressRoute.
+  -   Gateways com redundância de zona: Nas regiões que dão suporte a zonas de disponibilidade, os gateways de VPN e os gateways de ExpressRoute podem ser implantados em uma configuração com redundância de zona. 
 
 ##### Gateway x VNet:
 A diferença fundamental é que a Rede Virtual é a base da sua rede na nuvem, enquanto o Gateway de Rede Virtual é o componente que permite a conexão dessa rede virtual com redes externas. 
@@ -131,9 +132,11 @@ https://learn.microsoft.com/pt-br/training/modules/describe-azure-compute-networ
 #### Serviço de Contêineres
 https://learn.microsoft.com/pt-br/training/modules/describe-azure-compute-networking-services/5-containers
   Contêineres são um ambiente de virtualização. Assim como a execução de várias máquinas virtuais em um só host físico, você pode executar vários contêineres em apenas um host físico ou virtual.
-    - Instâncias de Contêiner (Ex.: Docker. Permitem que você carregue seus contêineres e, a seguir, o serviço executa os contêineres para você. Oferta de PaaS (plataforma como serviço))
-    - Aplicativos de Contêiner (capacidade de incorporar balanceamento de carga e colocação em escala. Oferta de PaaS (plataforma como serviço))
-    - Serviço de Kubernetes ("AKS". É um serviço de orquestração de contêiner)
+  
+    -   Instâncias de Contêiner (Ex.: Docker. Permitem que você carregue seus contêineres e, a seguir, o serviço executa os contêineres para você. Oferta de PaaS (plataforma como serviço))
+    -   Aplicativos de Contêiner (capacidade de incorporar balanceamento de carga e colocação em escala. Oferta de PaaS (plataforma como serviço))
+    -   Serviço de Kubernetes ("AKS". É um serviço de orquestração de contêiner)
+    
  Contêineres geralmente são usados para criar soluções que utilizam uma arquitetura de microsserviço. Essa arquitetura é onde você divide as soluções em partes menores e independentes. Por exemplo, você pode dividir um site em um contêiner que hospeda o front-end, outro que hospeda o back-end e um terceiro para o armazenamento. 
  
 #### Serviço de Funções
@@ -142,24 +145,26 @@ https://learn.microsoft.com/pt-br/training/modules/describe-azure-compute-networ
   
 #### Serviço de Aplicativo
 https://learn.microsoft.com/pt-br/training/modules/describe-azure-compute-networking-services/7-describe-application-hosting-options
-
   Tipos de serviços de aplicativos
-    - Aplicativos Web
-    - Aplicativos de API
-    - WebJobs
-    - Aplicativos móveis
+  -   Aplicativos Web
+  -   Aplicativos de API
+  -   WebJobs
+  -   Aplicativos móveis
+
+
+
 
 
 ### Entendendo Serviços de Armazenamento do Azure
 https://learn.microsoft.com/pt-br/training/modules/describe-azure-storage-services/
 
-# Conta de Armazenamento do Azure
+#### Conta de Armazenamento do Azure
 
 Uma conta de armazenamento do Azure é a base para todos os serviços de armazenamento na nuvem da Microsoft. É um contêiner que agrupa os diferentes tipos de dados que você quer guardar no Azure, como arquivos, objetos e mensagens. Pense nela como um "cofre" virtual que oferece um espaço de nome único e globalmente acessível para armazenar seus dados.
 
 Aqui está um resumo sobre os principais pontos referentes às contas de armazenamento do Azure:
 
-## Tipos de Dados Suportados
+#### Tipos de Dados Suportados
 
 Uma conta de armazenamento pode guardar quatro tipos principais de dados, cada um com um serviço correspondente:
 
@@ -168,7 +173,7 @@ Uma conta de armazenamento pode guardar quatro tipos principais de dados, cada u
 -   **Azure Queues:** Um serviço de mensagens que armazena grandes quantidades de mensagens para serem processadas por componentes de aplicativos. É usado para criar uma fila de mensagens e desacoplar partes de um aplicativo distribuído.
 -   **Azure Tables:** Um armazenamento NoSQL para grandes quantidades de dados estruturados e semi-estruturados. É um banco de dados de pares chave-valor que oferece um armazenamento flexível e de baixo custo.
 
-## Tipos de Contas de Armazenamento
+#### Tipos de Contas de Armazenamento
 
 Ao criar uma conta de armazenamento, você escolhe o tipo que melhor se adequa às suas necessidades de desempenho e custo. O tipo mais recomendado para a maioria dos cenários é o **General-purpose v2**.
 
@@ -176,7 +181,7 @@ Ao criar uma conta de armazenamento, você escolhe o tipo que melhor se adequa �
 -   **Blob Storage Accounts:** Contas legadas, focadas apenas em blobs. É mais comum usar o GPv2.
 -   **File Storage Accounts:** Focadas apenas em Azure Files. Oferecem desempenho premium e são ideais para cargas de trabalho que exigem alta performance de E/S.
 
-## Camadas de Acesso (para Blobs)
+#### Camadas de Acesso (para Blobs)
 
 As contas de armazenamento oferecem diferentes camadas de acesso para otimizar os custos com base na frequência de uso dos dados:
 
@@ -184,7 +189,7 @@ As contas de armazenamento oferecem diferentes camadas de acesso para otimizar o
 -   **Cool (Fria):** Para dados acessados com pouca frequência (pelo menos uma vez a cada 30 dias). Tem um custo de armazenamento mais baixo que a camada Hot, mas um custo de acesso mais alto.
 -   **Archive (Arquivo):** Para dados que raramente são acessados e podem tolerar longos tempos de recuperação (horas). Tem o custo de armazenamento mais baixo de todos, mas o custo de acesso é o mais alto. É ideal para backups e arquivamento de longo prazo.
 
-## Opções de Redundância
+#### Opções de Redundância
 
 A Azure Storage oferece várias opções de redundância para garantir a durabilidade e a alta disponibilidade dos seus dados. A escolha da redundância depende do nível de proteção que você precisa:
 
