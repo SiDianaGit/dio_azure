@@ -394,3 +394,49 @@ Trata-se de um serviço unificado de governança de dados que ajuda as organiza�
 #### Marcas do Azure (Azure Tags)
 
 Ferramenta projetada especificamente para organizar recursos com base em uma taxonomia definida por você. Você pode criar pares de chave-valor (como Ambiente: Produção, CentroDeCusto: Vendas, Projeto: Lançamento2024) e aplicá-los a qualquer recurso. Isso permite que você filtre, gerencie custos, automatize e gere relatórios com base nessa organização lógica.
+
+
+
+### Entendendo ferramentas para Gerenciar e Implantar recursos no Azure
+https://learn.microsoft.com/pt-br/training/modules/describe-features-tools-manage-deploy-azure-resources/1-introduction
+https://learn.microsoft.com/pt-br/azure/devops/user-guide/what-is-azure-devops?view=azure-devops
+
+
+#### Meios para automação de implantação de recursos do Azure
+
+CLI: Interface para execução de linhas de comando oara criar e gerenciar recursos no Azure.
+
+Cloud Shell: Necessário ter um storage account associado à conta. Inicia uma janela abaixo da tela para executar linhas de comando no modo PowerShell (windows) ou Bash (linux). É possível fazer uploads e downloads de arquivos.
+
+Bicep: (https://azure.github.io/bicep/) Templates em liguagem Bicep, própria e exclusiva da Microsoft, para criação e gerenciamento de recursos do Azure, no modelo Infra-As-Code
+
+
+#### Azure ARC
+
+O Azure Arc é uma tecnologia que estende as capacidades de gerenciamento do Azure para ambientes que não estão nativamente na nuvem da Microsoft. Ele conecta servidores, clusters Kubernetes e serviços de dados localizados em data centers locais, outras nuvens (como AWS e GCP) ou na borda, permitindo que eles sejam gerenciados através do painel de controle do Azure.
+
+As principais funcionalidades do Azure Arc incluem:
+
+- **Gerenciamento Híbrido e Multicloud:** O Azure Arc permite que você utilize as ferramentas e serviços de gerenciamento do Azure (como o Azure Policy, Azure Monitor e Azure Security Center) para administrar recursos fora do Azure, unificando a governança e a segurança em ambientes híbridos e multicloud.
+
+- **Projeção de Recursos Locais:** Com o Arc, servidores e clusters Kubernetes que não estão no Azure são "projetados" no Azure Resource Manager (ARM), tornando-os visíveis e gerenciáveis como se fossem recursos nativos do Azure.
+
+- **Execução de Serviços de Dados do Azure:** O Azure Arc permite que você execute serviços de dados do Azure, como o Azure SQL Managed Instance e o PostgreSQL Hyperscale, em sua própria infraestrutura.
+
+- **Simplificação da Governança:** Com o Arc, você pode aplicar políticas, monitorar o desempenho e auditar a conformidade de todos os seus recursos, independentemente de onde eles estejam localizados, usando o mesmo conjunto de ferramentas do Azure.
+
+
+#### Azure Resource Manager (ARM)
+
+O Azure Resource Manager (ARM) é o serviço de gerenciamento e implantação do Azure que possibilita criar, atualizar e excluir recursos do Azure. Ele atua como a espinha dorsal do gerenciamento de recursos na nuvem da Microsoft.
+
+As principais funcionalidades do ARM incluem:
+
+- **Gerenciamento Unificado:** O ARM fornece uma camada de gerenciamento consistente para todos os recursos do Azure, permitindo que você os gerencie como um grupo lógico, chamado grupo de recursos.
+
+- **Implantação de Infraestrutura como Código (IaC):** Com o ARM, é possível usar modelos JSON para descrever e implantar sua infraestrutura no Azure de forma declarativa. Isso garante consistência e repetibilidade nas implantações.
+
+- **Controle de Acesso Baseado em Função (RBAC):** O ARM integra-se ao Azure Active Directory (Azure AD) para aplicar permissões de acesso detalhadas. Você pode controlar quem pode realizar quais ações em seus recursos.
+
+- **Gerenciamento de Custos:** O ARM permite aplicar tags (rótulos) aos recursos, o que facilita o rastreamento e a análise de custos por equipe, projeto ou ambiente.
+
