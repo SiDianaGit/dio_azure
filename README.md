@@ -440,3 +440,58 @@ As principais funcionalidades do ARM incluem:
 
 - **Gerenciamento de Custos:** O ARM permite aplicar tags (rótulos) aos recursos, o que facilita o rastreamento e a análise de custos por equipe, projeto ou ambiente.
 
+
+### Entendendo Monitoramento
+https://learn.microsoft.com/pt-br/training/modules/describe-monitoring-tools-azure/1-introduction
+
+
+#### Assistente do Azure
+https://learn.microsoft.com/pt-br/azure/advisor/advisor-overview
+
+O *Azure Advisor* é um assistente de nuvem personalizado que analisa as configurações de uso e recursos de suas assinaturas do Azure. Ele fornece recomendações práticas e personalizadas para ajudar você a otimizar seus custos, melhorar o desempenho, aumentar a segurança e garantir a alta disponibilidade de seus recursos. As recomendações são categorizadas em cinco pilares:
+
+- **Custo:** Identifica recursos subutilizados ou inativos que podem ser desligados ou redimensionados para economizar dinheiro.
+
+- **Segurança:** Recomenda ações para fortalecer a segurança de seus recursos, como habilitar a autenticação multifator ou aplicar regras de segurança.
+
+- **Confiabilidade:** Sugere melhorias na alta disponibilidade e continuidade dos negócios de seus aplicativos críticos.
+
+- **Excelência Operacional:** Ajuda a garantir a consistência de suas implantações e a conformidade com as melhores práticas.
+
+- **Desempenho:** Oferece recomendações para otimizar a velocidade e a capacidade de resposta de seus aplicativos.
+
+#### Integridade de Serviço 
+
+A Integridade do Serviço do Azure (Azure Service Health) é um serviço que informa sobre o status de todos os serviços do Azure. Ele fornece uma visão personalizada e em tempo real sobre eventos que podem afetar seus recursos, como interrupções, manutenções planejadas ou avisos de integridade. Com o Service Health, você pode:
+
+- Receber alertas sobre eventos de serviço que afetam suas assinaturas e regiões.
+
+- Acessar informações detalhadas sobre a causa, o impacto e o status da mitigação de um problema.
+
+- Planejar manutenções futuras para evitar surpresas.
+
+#### Azure Monitor
+
+O Azure Monitor é uma solução abrangente para coletar, analisar e atuar com base em dados de telemetria de seus ambientes do Azure e de outros ambientes locais e multicloud. Ele centraliza as métricas e os logs de desempenho de seus recursos, fornecendo uma visão unificada da integridade e do desempenho de sua infraestrutura e aplicativos. O Azure Monitor é a base para outros serviços como o Log Analytics, os Alertas e o Application Insights (VMs, Storage accounts, Networks, etc).
+
+
+##### Azure Log Analytics
+
+O Azure Log Analytics é um serviço do Azure Monitor que coleta e indexa dados de logs e métricas de diversas fontes. Ele usa a linguagem de consulta KQL (Kusto Query Language) para permitir que você execute consultas complexas, visualize dados em painéis personalizáveis e analise o comportamento de seus recursos. É uma ferramenta essencial para a solução de problemas, análise de segurança e auditoria, ajudando a identificar a causa raiz de falhas e a entender padrões de uso.
+
+
+##### Alertas do Azure Monitor
+
+Os Alertas do Azure Monitor são usados para notificar proativamente quando certas condições são atendidas nos seus dados de monitoramento. Eles são a forma de atuar com base nas informações coletadas pelo Azure Monitor e pelo Log Analytics. Você pode configurar alertas para métricas (por exemplo, quando o uso da CPU ultrapassa 90%) ou logs (por exemplo, quando um erro específico ocorre). Os alertas podem ser enviados por email, SMS, ou podem disparar ações automáticas, como a execução de um runbook ou a ativação de uma função do Azure.
+
+##### Application Insights
+
+O Application Insights é um serviço de Gerenciamento de Desempenho de Aplicativos (APM) integrado ao Azure Monitor. Ele coleta dados de desempenho e uso de seus aplicativos, ajudando os desenvolvedores a entender o que está acontecendo em tempo real. Ele fornece informações detalhadas sobre:
+
+- **Desempenho:** Tempo de resposta de solicitações, taxas de falha e desempenho de dependências.
+
+- **Disponibilidade:** Testes de disponibilidade para verificar se seu aplicativo está online e respondendo.
+
+- **Uso:** Quantos usuários acessam seu aplicativo, quais recursos são mais populares e de onde eles estão acessando.
+
+O Application Insights é uma ferramenta poderosa para diagnosticar falhas, entender o comportamento do usuário e melhorar a experiência geral do seu aplicativo.
