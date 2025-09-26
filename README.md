@@ -495,3 +495,71 @@ O Application Insights é um serviço de Gerenciamento de Desempenho de Aplicati
 - **Uso:** Quantos usuários acessam seu aplicativo, quais recursos são mais populares e de onde eles estão acessando.
 
 O Application Insights é uma ferramenta poderosa para diagnosticar falhas, entender o comportamento do usuário e melhorar a experiência geral do seu aplicativo.
+
+
+Representação Visual da Rede Virtual do Azure (Azure VNet)
+
+graph TD
+    subgraph 🏢 On-Premises
+        L[Servidor Local/Datacenter]
+        SGW(VPN Gateway/ExpressRoute)
+    end
+
+    subgraph 🌐 Internet
+        U[Usuário/Cliente]
+    end
+
+    subgraph ☁️ Azure (Região do Azure)
+
+        subgraph VNET-A [VNet A: 10.1.0.0/16]
+            direction LR
+
+            subgraph Subnet-Web [Sub-Rede WEB 10.1.1.0/24]
+                VM-W(VM Servidor Web)
+            end
+
+            subgraph Subnet-App [Sub-Rede App 10.1.2.0/24]
+                VM-A(VM Servidor App)
+            end
+
+            subgraph Subnet-DB [Sub-Rede DB 10.1.3.0/24]
+                DB(Banco de Dados PaaS)
+            end
+
+            FW(Azure Firewall/NGS)
+        end
+
+        subgraph VNET-B [VNet B: 10.2.0.0/16]
+            direction LR
+            VM-B(VM no VNet-B)
+        end
+
+        GW(VNet Gateway)
+    end
+
+    subgraph Rotas e Controles
+        RT(Tabela de Rota - UDRs)
+        NSG(Grupo de Segurança de Rede)
+    end
+
+    subgraph Outros Recursos do Azure
+        SA(Conta de Armazenamento)
+        AF(Azure Function)
+    end
+
+    %% Conexões
+    U -- 1. Comunicação Internet (INBOUND) --> VM-W
+    VM-W -- 2. Isolamento e Segmentação --> VM-A
+    VM-A -- 3. Comunicação Azure Recursos --> DB
+    VM-A -- 4. Roteamento e Filtragem --> FW
+    FW -- 5. Comunicação VNet Peering --> VM-B
+    VM-A -- 6. Conexão Híbrida --> GW
+    GW -- 7. Conexão Local --> SGW
+    SGW -- 8. Comunicação Local --> L
+
+    %% Legendas de Controle
+    NSG -. 9. Filtrar Tráfego (Em todas as VMs/Subnets) .-> VM-W
+    RT -. 10. Rotear Tráfego .-> FW
+
+    %% Conexão entre VNets
+    VNET-A --- P{VNet Peering} --- VNET-B
