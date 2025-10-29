@@ -563,3 +563,122 @@ graph TD
 
     %% Conexão entre VNets
     VNET-A --- P{VNet Peering} --- VNET-B
+
+
+    Que excelente pedido! Como um modelo de linguagem, não posso gerar desenhos ou gráficos diretamente, mas posso usar a formatação Markdown, emojis e diagramas de texto simples para criar uma representação visual e estruturada de uma Rede Virtual do Azure (VNet) e suas principais funcionalidades.
+
+Aqui está um "desenho" que ilustra os conceitos que você solicitou:
+
+🖼️ Representação Visual da Rede Virtual do Azure (Azure VNet)
+Fragmento do código
+
+graph TD
+    subgraph 🏢 On-Premises
+        L[Servidor Local/Datacenter]
+        SGW(VPN Gateway/ExpressRoute)
+    end
+
+    subgraph 🌐 Internet
+        U[Usuário/Cliente]
+    end
+
+    subgraph ☁️ Azure (Região do Azure)
+
+        subgraph VNET-A [VNet A: 10.1.0.0/16]
+            direction LR
+
+            subgraph Subnet-Web [Sub-Rede WEB 10.1.1.0/24]
+                VM-W(VM Servidor Web)
+            end
+
+            subgraph Subnet-App [Sub-Rede App 10.1.2.0/24]
+                VM-A(VM Servidor App)
+            end
+
+            subgraph Subnet-DB [Sub-Rede DB 10.1.3.0/24]
+                DB(Banco de Dados PaaS)
+            end
+
+            FW(Azure Firewall/NGS)
+        end
+
+        subgraph VNET-B [VNet B: 10.2.0.0/16]
+            direction LR
+            VM-B(VM no VNet-B)
+        end
+
+        GW(VNet Gateway)
+    end
+
+    subgraph Rotas e Controles
+        RT(Tabela de Rota - UDRs)
+        NSG(Grupo de Segurança de Rede)
+    end
+
+    subgraph Outros Recursos do Azure
+        SA(Conta de Armazenamento)
+        AF(Azure Function)
+    end
+
+    %% Conexões
+    U -- 1. Comunicação Internet (INBOUND) --> VM-W
+    VM-W -- 2. Isolamento e Segmentação --> VM-A
+    VM-A -- 3. Comunicação Azure Recursos --> DB
+    VM-A -- 4. Roteamento e Filtragem --> FW
+    FW -- 5. Comunicação VNet Peering --> VM-B
+    VM-A -- 6. Conexão Híbrida --> GW
+    GW -- 7. Conexão Local --> SGW
+    SGW -- 8. Comunicação Local --> L
+
+    %% Legendas de Controle
+    NSG -. 9. Filtrar Tráfego (Em todas as VMs/Subnets) .-> VM-W
+    RT -. 10. Rotear Tráfego .-> FW
+
+    %% Conexão entre VNets
+    VNET-A --- P{VNet Peering} --- VNET-B
+
+    
+📝 Explicação dos Conceitos (Baseada no Diagrama)
+1. Isolamento e Segmentação
+Representação: As caixas VNET-A e as sub-redes (Subnet-Web, Subnet-App, Subnet-DB).
+
+Conceito: Uma Rede Virtual (VNet) fornece um limite de rede isolado no Azure. Dentro de uma VNet, você usa Sub-redes para segmentar o espaço de endereço e isolar logicamente os recursos (ex: VM-W na sub-rede Web separada do VM-A na sub-rede App).
+
+2. Comunicação pela Internet (Entrada/Saída)
+Representação: U (Usuário) ↔ VM-W.
+
+Conceito: Recursos como VM-W podem se comunicar com a Internet (U). Essa comunicação é sempre protegida por padrões de segurança do Azure e, idealmente, por grupos de segurança de rede (NSGs) e/ou um Firewall.
+
+3. Comunicação entre Recursos do Azure
+Representação: VM-A ↔ DB ou VM-A ↔ SA ou AF.
+
+Conceito:
+
+Intra-VNet: Recursos na mesma VNet (VM-W ↔ VM-A) se comunicam livremente por padrão (sujeito a regras de NSG).
+
+Service Endpoints / Private Link: Recursos PaaS do Azure (como DB ou SA) podem ser conectados à sua VNet, permitindo que VM-A se comunique com eles de forma privada, usando a rede backbone da Microsoft.
+
+4. Conectar Redes Virtuais
+Representação: VNET-A ↔ P {VNet Peering} ↔ VNET-B.
+
+Conceito: O VNet Peering conecta duas VNets do Azure, permitindo que o tráfego (VM-W ↔ VM-B) flua entre elas de forma privada e com baixa latência, usando a rede da Microsoft, não a Internet pública.
+
+5. Comunicação com Recursos Locais (Conexão Híbrida)
+Representação: VM-A ↔ GW ↔ SGW ↔ L.
+
+Conceito: O VNet Gateway (GW) cria um ponto de conexão para o seu ambiente local (On-Premises) usando:
+
+VPN Gateway (SGW): Conexão criptografada (Site-to-Site) pela Internet.
+
+ExpressRoute (SGW): Conexão privada de alta velocidade.
+
+6. Rotear Tráfego de Rede
+Representação: RT (Tabela de Rota) → FW.
+
+Conceito: O Roteamento Definido pelo Usuário (UDRs) permite que você substitua as rotas padrão do Azure. Você pode forçar que todo o tráfego de saída de uma sub-rede (VM-A) passe por um appliance específico (como o Azure Firewall - FW) antes de sair para qualquer destino.
+
+7. Filtrar Tráfego de Rede
+Representação: NSG (Grupo de Segurança de Rede) controlando o acesso a VM-W, VM-A, etc.
+
+Conceito: Os Grupos de Segurança de Rede (NSGs) atuam como firewalls de camada 4 (TCP/UDP). Eles permitem ou negam tráfego de entrada e saída para VMs ou sub-redes inteiras, garantindo que, por exemplo, apenas VM-A possa se conectar à Subnet-DB.
+
